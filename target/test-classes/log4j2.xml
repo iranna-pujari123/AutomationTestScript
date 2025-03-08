@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+    <Appenders>
+        <Console name="ABC" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <File name="FileLogger" fileName="logs/application.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="TestNgPackage" level="warn" additivity="false">
+            <AppenderRef ref="ABC"/>
+            <AppenderRef ref="ABC"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ABC"/>
+            
+        </Root>
+    </Loggers>
+</Configuration>
